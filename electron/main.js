@@ -5,6 +5,9 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 1000,
     height: 700,
+	autoHideMenuBar: true,
+	frame: false,
+	titleBarStylel: "hidden",
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       nodeIntegration: false,
@@ -13,7 +16,7 @@ function createWindow() {
   });
 
   // Load your HTML app (from /app)
-  win.loadFile(path.join(__dirname, "../client/index.html"));
+  win.loadFile(path.join(__dirname, "./index.html"));
 }
 
 app.whenReady().then(createWindow);
