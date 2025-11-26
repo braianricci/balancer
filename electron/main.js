@@ -15,8 +15,11 @@ function createWindow() {
     }
   });
 
-  // Load your HTML app (from /app)
+  // Load your HTML app
   win.loadFile(path.join(__dirname, "./index.html"));
+
+	//console
+	//win.webContents.openDevTools();
 }
 
 app.whenReady().then(createWindow);
