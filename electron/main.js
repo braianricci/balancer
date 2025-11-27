@@ -17,11 +17,8 @@ function createWindow() {
 		}
 	});
 
-	// Load your HTML app
+	//load html
 	win.loadFile(path.join(__dirname, "./index.html"));
-
-	//console
-	//win.webContents.openDevTools();
 }
 
 app.whenReady().then(createWindow);
@@ -31,10 +28,7 @@ app.on("window-all-closed", () => {
 });
 
 ipcMain.on('launch-native-rdp', (event, ipAddress) => {
-	// This launches the external Windows RDP app
-	// It will appear as a separate window on top of everything
 	console.log('Launching RDP for:', ipAddress);
-	// spawn('mstsc', [`/v:${ipAddress}`]);
 	const rdp = spawn('mstsc', [`/v:${ipAddress}`]);
 	rdp.on('error', (err) => {
 		console.error('Failed to start mstsc:', err);

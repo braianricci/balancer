@@ -1,9 +1,10 @@
 const loadBtn = document.getElementById("load");
 const ul = document.getElementById("list");
+const rdpBtn = document.getElementById("rdp");
 
-document.getElementById('my-rdp').addEventListener('click', () => {
-  // Opens the native Windows RDP window
-  window.rdp.connect('192.168.1.50');
+rdpBtn.addEventListener('click', () => {
+	//opens rdp
+	window.rdp.connect('192.168.1.50');
 });
 
 loadBtn.onclick = async () => {
